@@ -14,7 +14,7 @@ string name(string line, int start) {
 }
 
 int main() {
-  ifstream infile("log.txt");
+  ifstream infile("your log here");
   map<string, pair<pair<int, int>, bool> > p;
   deque<string> l;
   bool start = false;
