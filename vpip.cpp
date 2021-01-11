@@ -1,4 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <sstream>
+#include <deque>
+#include <utility>
+#include <set>
 using namespace std;
 
 string name(string line, int start) {
