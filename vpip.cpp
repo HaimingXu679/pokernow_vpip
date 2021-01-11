@@ -38,6 +38,6 @@ int main() {
     }
     l.pop_front();
   }
-  for (auto a : p) cout << a.first << " " << a.second.first.first << " " << a.second.first.second << endl;
+  for (auto a : p) cout << a.first << " " << a.second.first.first << " " << a.second.first.second << " " << double(a.second.first.first) / a.second.first.second << endl;
   return 0;
 }
