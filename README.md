@@ -9,7 +9,8 @@ For example:
   
 You might need to 
 ```brew install gcc```. If this doesn't work, replace ```#include <bits/stdc++.h>``` with 
-```#include <iostream>
+```
+#include <iostream>
 #include <fstream>
 #include <map>
 #include <sstream>
