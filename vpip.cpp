@@ -31,7 +31,7 @@ int main() {
       while (l.front().find("Flop") == string::npos && !l.empty()) {
         if (l.front().find("calls") != string::npos || l.front().find("raises") != string::npos) {
           if (orbit.find(name(l.front(), 3)) == orbit.end()) p[name(l.front(), 3)].first.first++;
-          else orbit.insert(name(l.front(), 3));
+          orbit.insert(name(l.front(), 3));
         }
         l.pop_front();
       }
