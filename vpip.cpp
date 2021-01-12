@@ -14,7 +14,7 @@ string name(string line, int start) {
 }
 
 int main() {
-  ifstream infile("your log here");
+  ifstream infile("log.txt");
   map<string, pair<pair<int, int>, bool> > p;
   deque<string> l;
   bool start = false;
@@ -25,13 +25,19 @@ int main() {
       if (p.find(name(l.front(), 14)) == p.end()) p[name(l.front(), 14)] = make_pair(make_pair(0, 0), true);
       p[name(l.front(), 14)].second = true;
     } else if (l.front().find("quit") != string::npos) p[name(l.front(), 14)].second = false;
-    else if (l.front().find("Player stacks") != string::npos) {
+    else if (l.front().find("approved") != string::npos) {
+      if (p.find(name(l.front(), 33)) == p.end()) p[name(l.front(), 33)] = make_pair(make_pair(0, 0), true);
+      p[name(l.front(), 33)].second = true;
+    } else if (l.front().find("Player stacks") != string::npos) {
       set<string> orbit;
       for (auto a : p) if (p[a.first].second) p[a.first].first.second++;
       while (l.front().find("Flop") == string::npos && !l.empty()) {
         if (l.front().find("calls") != string::npos || l.front().find("raises") != string::npos) {
           if (orbit.find(name(l.front(), 3)) == orbit.end()) p[name(l.front(), 3)].first.first++;
           orbit.insert(name(l.front(), 3));
+        } else if (l.front().find("approved") != string::npos) {
+          if (p.find(name(l.front(), 33)) == p.end()) p[name(l.front(), 33)] = make_pair(make_pair(0, 0), true);
+          p[name(l.front(), 33)].second = true;
         }
         l.pop_front();
       }
