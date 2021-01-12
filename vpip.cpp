@@ -29,7 +29,7 @@ int main() {
       set<string> orbit;
       for (auto a : p) if (p[a.first].second) p[a.first].first.second++;
       while (l.front().find("Flop") == string::npos && !l.empty()) {
-        if (l.front().find("calls") != string::npos) {
+        if (l.front().find("calls") != string::npos || l.front().find("raises") != string::npos) {
           if (orbit.find(name(l.front(), 3)) == orbit.end()) p[name(l.front(), 3)].first.first++;
           else orbit.insert(name(l.front(), 3));
         }
