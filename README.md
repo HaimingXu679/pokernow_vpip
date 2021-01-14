@@ -9,3 +9,5 @@ For example:
   
 You might need to 
 ```brew install gcc```.
+
+If you **do not** have C++14 or later installed, use ```vpip_v2.cpp``` instead of ```vpip.cpp```.
