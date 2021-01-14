@@ -21,10 +21,10 @@ int main() {
   string line;
   while (getline(infile, line)) l.push_front(line);
   while (!l.empty()) {
-    if (l.front().find("joined") != string::npos) {
+    if (l.front().find("joined") != string::npos || l.front().find("sit") != string::npos) {
       if (p.find(name(l.front(), 14)) == p.end()) p[name(l.front(), 14)] = make_pair(make_pair(0, 0), true);
       p[name(l.front(), 14)].second = true;
-    } else if (l.front().find("quit") != string::npos) p[name(l.front(), 14)].second = false;
+    } else if (l.front().find("quit") != string::npos || l.front().find("stand") != string::npos) p[name(l.front(), 14)].second = false;
     else if (l.front().find("approved") != string::npos) {
       if (p.find(name(l.front(), 33)) == p.end()) p[name(l.front(), 33)] = make_pair(make_pair(0, 0), true);
       p[name(l.front(), 33)].second = true;
